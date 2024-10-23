@@ -29,11 +29,11 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
         <CacheProvider>
-          <ChakraProvider resetCSS theme={theme}>
-            <RainbowKitProvider coolMode appInfo={appInfo}>
-              {mounted && children}
-            </RainbowKitProvider>
-          </ChakraProvider>
+          {/* <ChakraProvider resetCSS theme={theme}> */}
+          <RainbowKitProvider coolMode appInfo={appInfo}>
+            {mounted && children}
+          </RainbowKitProvider>
+          {/* </ChakraProvider> */}
         </CacheProvider>
       </QueryClientProvider>
     </WagmiProvider>

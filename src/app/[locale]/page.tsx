@@ -9,6 +9,7 @@ export default function HomePage() {
     <div>
       <h1 style={{ color: variables.primaryColor }}>{t('title')}</h1>
       <Link href="/about">{t('about')}</Link>
+      你好呀李银河
     </div>
   );
 }

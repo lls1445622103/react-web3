@@ -8,7 +8,8 @@ import { NextIntlClientProvider } from 'next-intl';
 import { getMessages } from 'next-intl/server';
 import { Roboto } from 'next/font/google';
 import { ThemeProvider } from '@mui/material/styles';
-import theme from '../theme';
+import MaterialProvider from './MaterialProvider'
+import { darkTheme, theme } from '../theme';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -45,13 +46,7 @@ export default async function RootLayout({
   params: { locale: string };
 }>) {
 
-  // // Ensure that the incoming `locale` is valid
-  // if (!routing.locales.includes(locale as any)) {
-  //   notFound();
-  // }
 
-  // Providing all messages to the client
-  // side is the easiest way to get started
   const messages = await getMessages();
 
   return (
@@ -59,14 +54,16 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.variable}`}
       >
-        <AppRouterCacheProvider options={{ key: 'css' }}>
-          <ThemeProvider theme={theme}>
-            <NextIntlClientProvider messages={messages}>
-              <Providers>{children}</Providers>
-            </NextIntlClientProvider>
-          </ThemeProvider>
+        {/* <AppRouterCacheProvider options={{ key: 'css' }}>
+          <ThemeProvider theme={theme}> */}
+        <MaterialProvider>
+          <NextIntlClientProvider messages={messages}>
+            <Providers>{children}</Providers>
+          </NextIntlClientProvider>
+        </MaterialProvider>
 
-        </AppRouterCacheProvider>
+        {/* </ThemeProvider>
+        </AppRouterCacheProvider> */}
 
       </body>
     </html>

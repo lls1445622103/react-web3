@@ -23,18 +23,12 @@ export function Providers({ children }: Readonly<{ children: ReactNode }>) {
   const appInfo = {
     appName: "Next-Web3-Boilerplate",
   };
-
-  // console.log("wagmiConfig", wagmiConfig);
   return (
     <WagmiProvider config={wagmiConfig}>
       <QueryClientProvider client={queryClient}>
-        <CacheProvider>
-          {/* <ChakraProvider resetCSS theme={theme}> */}
-          <RainbowKitProvider coolMode appInfo={appInfo}>
-            {mounted && children}
-          </RainbowKitProvider>
-          {/* </ChakraProvider> */}
-        </CacheProvider>
+        <RainbowKitProvider coolMode appInfo={appInfo}>
+          {mounted && children}
+        </RainbowKitProvider>
       </QueryClientProvider>
     </WagmiProvider>
   );

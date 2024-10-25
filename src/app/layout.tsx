@@ -9,7 +9,7 @@ import { getMessages } from 'next-intl/server';
 import { Roboto } from 'next/font/google';
 import { ThemeProvider } from '@mui/material/styles';
 import MaterialProvider from './MaterialProvider'
-import { darkTheme, theme } from '../theme';
+import { darkTheme, lightTheme } from '../theme';
 
 const roboto = Roboto({
   weight: ['300', '400', '500', '700'],
@@ -54,17 +54,11 @@ export default async function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased ${roboto.variable}`}
       >
-        {/* <AppRouterCacheProvider options={{ key: 'css' }}>
-          <ThemeProvider theme={theme}> */}
         <MaterialProvider>
           <NextIntlClientProvider messages={messages}>
             <Providers>{children}</Providers>
           </NextIntlClientProvider>
         </MaterialProvider>
-
-        {/* </ThemeProvider>
-        </AppRouterCacheProvider> */}
-
       </body>
     </html>
   );

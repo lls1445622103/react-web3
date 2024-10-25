@@ -11,41 +11,32 @@ import MenuItem from '@mui/material/MenuItem';
 import Switch from '@mui/material/Switch';
 import Select from '@mui/material/Select';
 import { useColorScheme } from '@mui/material/styles';
+import InputLabel from '@mui/material/InputLabel';
 // import * as icons from '@mui/icons-material';
 import { useEffect } from 'react';
-import { useThemeToggle } from '../MaterialProvider';
+
+import FormControl from '@mui/material/FormControl';
 export default function HomePage() {
-  // console.log(icons, 'icons')
-  const t = useTranslations('HomePage');
-  const { toggleTheme, isDarkMode } = useThemeToggle();
   const { mode, setMode } = useColorScheme();
-  useEffect(() => {
-    console.log(mode, 'mode')
-  }, [mode]);
-  const bool = false
   return (
     <div>
-      <h1 style={{ color: variables.primaryColor }}>{t('title')}</h1>
-      <Link href="/about">{t('about')}</Link>
-      你好呀李银河
-      <ConnectButton />
-      <Stack spacing={2} direction="row">
-        <Button variant="text">Text</Button>
-        <Button variant="contained">Contained</Button>
-        <Button variant="outlined">Outlined</Button>
-        <Icon >add_circle</Icon>
-        <DeleteSharpIcon />
-      </Stack>
-      <Select
-        value={isDarkMode}
-        onChange={(event) =>
-          toggleTheme(event.target.value)
-        }
-        sx={{ minWidth: 120 }}
-      >
-        <MenuItem value='light'>Light</MenuItem>
-        <MenuItem value="dark">Dark</MenuItem>
-      </Select>
+      <FormControl >
+        <InputLabel id="demo-simple-select-label">Age</InputLabel>
+        <Select
+          label="Theme"
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={mode}
+          onChange={(event) =>
+            setMode(event.target.value as 'system' | 'light' | 'dark')
+          }
+          sx={{ minWidth: 120 }}
+        >
+          <MenuItem value='light'>Light</MenuItem>
+          <MenuItem value="dark">Dark</MenuItem>
+          <MenuItem value="system">system</MenuItem>
+        </Select>
+      </FormControl>
     </div>
   );
 }

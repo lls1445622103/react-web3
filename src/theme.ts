@@ -34,7 +34,9 @@ export const theme = createTheme({
       },
     },
   },
-  // cssVariables: true,
+  cssVariables: {
+    colorSchemeSelector: 'class'
+  }
 });
 
 

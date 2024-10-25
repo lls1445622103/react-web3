@@ -19,24 +19,24 @@ import FormControl from '@mui/material/FormControl';
 export default function HomePage() {
   const { mode, setMode } = useColorScheme();
   return (
-    <div>
-      <FormControl >
-        <InputLabel id="demo-simple-select-label">Age</InputLabel>
-        <Select
-          label="Theme"
-          labelId="demo-simple-select-label"
-          id="demo-simple-select"
-          value={mode}
-          onChange={(event) =>
-            setMode(event.target.value as 'system' | 'light' | 'dark')
-          }
-          sx={{ minWidth: 120 }}
-        >
-          <MenuItem value='light'>Light</MenuItem>
-          <MenuItem value="dark">Dark</MenuItem>
-          <MenuItem value="system">system</MenuItem>
-        </Select>
-      </FormControl>
-    </div>
+
+    <FormControl >
+      <InputLabel id="demo-simple-select-label">Age</InputLabel>
+      <Select
+        label="Theme"
+        labelId="demo-simple-select-label"
+        id="demo-simple-select"
+        value={mode}
+        onChange={(event) =>
+          setMode((event.target.value as 'system' | 'light' | 'dark'))
+        }
+        sx={{ minWidth: 120 }}
+      >
+        <MenuItem value='light'>Light</MenuItem>
+        <MenuItem value="dark">Dark</MenuItem>
+        <MenuItem value="system">system</MenuItem>
+      </Select>
+    </FormControl>
+
   );
 }

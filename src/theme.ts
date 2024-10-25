@@ -1,16 +1,8 @@
 // 'use client';
 import { createTheme } from '@mui/material/styles';
 
-const lightTheme = createTheme({
-  typography: {
-    fontFamily: 'var(--font-roboto)',
-  },
-  palette: {
-    mode: 'light',
-  },
-  cssVariables: true,
-});
-const darkTheme = createTheme({
+
+export const theme = createTheme({
   // typography: {
   //   fontFamily: 'var(--font-roboto)',
   // },
@@ -18,12 +10,31 @@ const darkTheme = createTheme({
   //   mode: 'dark',
   // },
   colorSchemes: {
-    dark: true,
+    // dark: true,
+     dark: {
+      palette: {
+        mode: 'dark',
+        primary: {
+          main: '#f48fb1',
+        },
+        secondary: {
+          main: '#f48fb1',
+        },
+      },
+    },
+    light: {
+      palette: {
+        mode: 'light',
+        primary: {
+          main: '#1976d2',
+        },
+        secondary: {
+          main: '#d32f2f',
+        },
+      },
+    },
   },
   // cssVariables: true,
 });
 
-export {
-  lightTheme,
-  darkTheme
-};
+

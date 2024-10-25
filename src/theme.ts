@@ -14,23 +14,23 @@ export const theme = createTheme({
      dark: {
       palette: {
         mode: 'dark',
-        primary: {
-          main: '#f48fb1',
-        },
-        secondary: {
-          main: '#f48fb1',
-        },
+        // primary: {
+        //   main: '#f48fb1',
+        // },
+        // secondary: {
+        //   main: '#f48fb1',
+        // },
       },
     },
     light: {
       palette: {
         mode: 'light',
-        primary: {
-          main: '#1976d2',
-        },
-        secondary: {
-          main: '#d32f2f',
-        },
+        // primary: {
+        //   main: '#1976d2',
+        // },
+        // secondary: {
+        //   main: '#d32f2f',
+        // },
       },
     },
   },

@@ -23,6 +23,7 @@ export default function HomePage() {
     <FormControl >
       <InputLabel id="demo-simple-select-label">Age</InputLabel>
       <Select
+        size="small"
         label="Theme"
         labelId="demo-simple-select-label"
         id="demo-simple-select"
@@ -36,6 +37,7 @@ export default function HomePage() {
         <MenuItem value="dark">Dark</MenuItem>
         <MenuItem value="system">system</MenuItem>
       </Select>
+      <Button variant="contained">Hello world</Button>;
     </FormControl>
 
   );

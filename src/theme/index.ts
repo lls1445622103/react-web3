@@ -9,6 +9,9 @@ export const theme = createTheme({
   // palette: {
   //   mode: 'dark',
   // },
+  components: {
+    
+  },
   colorSchemes: {
     // dark: true,
      dark: {

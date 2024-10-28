@@ -10,7 +10,11 @@ export const theme = createTheme({
   //   mode: 'dark',
   // },
   components: {
-    
+       MuiButton: {
+      defaultProps: {
+        size: 'small',
+      },
+    },
   },
   colorSchemes: {
     // dark: true,
